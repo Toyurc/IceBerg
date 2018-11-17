@@ -1,9 +1,12 @@
-package com.example.adeba.iceberg.userInterfaceLayer;
+package com.example.adeba.iceberg.userInterfaceLayer.adapters;
 
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+
+import com.example.adeba.iceberg.userInterfaceLayer.fragments.DecryptFragment;
+import com.example.adeba.iceberg.userInterfaceLayer.fragments.EncryptFragment;
 
 public class StegFragmentAdapter extends FragmentPagerAdapter
 {
