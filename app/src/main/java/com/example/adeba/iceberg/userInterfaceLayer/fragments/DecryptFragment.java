@@ -21,6 +21,7 @@ public class DecryptFragment extends Fragment {
     private String title;
     private static int RESULT_LOAD_IMAGE = 1;
     Button decryptionUploadButton;
+    Button startDecryptionButton;
     ImageView uploadedImage;
 
     @Nullable
@@ -28,8 +29,9 @@ public class DecryptFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
                 R.layout.decrypt_fragment, container, false);
-        decryptionUploadButton = (Button) rootView.findViewById(R.id.encrypt_upload_button);
-        uploadedImage = rootView.findViewById(R.id.encrypt_image_view);
+        decryptionUploadButton = (Button) rootView.findViewById(R.id.decrypt_upload_button);
+        startDecryptionButton = (Button) rootView.findViewById(R.id.decrypt_button);
+        uploadedImage = rootView.findViewById(R.id.decrypt_image_view);
         decryptionUploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,7 +61,7 @@ public class DecryptFragment extends Fragment {
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
+        if (requestCode == RESULT_LOAD_IMAGE && resultCode == RESULT_OK && null != data) {
             Uri selectedImage = data.getData();
             uploadedImage.setImageURI(selectedImage);
         }
